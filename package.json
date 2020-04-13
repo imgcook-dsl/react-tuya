@@ -14,9 +14,5 @@
   },
   "scripts": {
     "test": "node ./test/index.js"
-  },
-  "dependencies": {
-    "jss": "^10.1.1",
-    "jss-preset-default": "^10.1.1"
   }
 }

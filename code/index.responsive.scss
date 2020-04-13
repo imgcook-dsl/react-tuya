@@ -1,312 +1,325 @@
 .mod {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
   height: 58.8vw;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
-.primary {
-  width: 42.67vw;
-  height: 58.67vw;
-  display: flex;
-  overflow: hidden;
-  align-items: flex-start;
-  flex-direction: column;
-  background-color: #f8f9fb;
-}
-.hot {
-  color: #e74c00;
-  height: 8.27vw;
-  overflow: hidden;
-  position: relative;
-  font-size: 7.2vw;
-  max-width: 35.73vw;
-  margin-top: 5.6vw;
-  font-family: Helvetica;
-  font-weight: normal;
-  line-height: 8.27vw;
-  margin-left: 5.33vw;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  letter-spacing: 0px;
-}
-.products {
-  color: #e74c00;
-  height: 2.93vw;
-  overflow: hidden;
-  position: relative;
-  font-size: 2.4vw;
-  max-width: 35.2vw;
-  margin-top: 0.13vw;
-  font-family: Helvetica;
-  font-weight: normal;
-  line-height: 2.93vw;
-  margin-left: 5.87vw;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.item {
-  width: 35.33vw;
-  height: 40.8vw;
-  opacity: 1;
-  position: relative;
-  margin-top: 0.93vw;
-}
-.side {
-  width: 117.33vw;
-  height: 58.67vw;
-  display: flex;
-  position: relative;
-  align-items: center;
-  border-color: rgba(229, 229, 229, 1);
-  border-style: solid;
-  border-width: 1px;
-  flex-direction: column;
-  background-color: #ffffff;
-}
-.outer {
-  height: 22.4vw;
-  display: flex;
-  position: relative;
-  margin-top: 3.73vw;
-  align-items: center;
-  flex-direction: row;
-}
-.wrap {
-  height: 22.4vw;
-  display: flex;
-  align-items: flex-start;
-  margin-right: 15.87vw;
-  flex-direction: column;
-}
-.largeIcon {
-  width: 9.07vw;
-  height: 17.33vw;
-  opacity: 1;
-  position: relative;
-  margin-left: 2.93vw;
-}
-.smartLighting {
-  color: #888b8d;
-  position: relative;
-  font-size: 2.13vw;
-  margin-top: 2.4vw;
-  font-family: Helvetica;
-  font-weight: normal;
-  line-height: 2.67vw;
-  white-space: pre;
-}
-.block {
-  width: 13.6vw;
-  height: 22vw;
-  display: flex;
-  align-items: center;
-  margin-right: 15.2vw;
-  flex-direction: column;
-}
-.pic {
-  width: 12vw;
-  height: 16.53vw;
-  opacity: 1;
-  position: relative;
-}
-.smartWasher {
-  color: #888b8d;
-  position: relative;
-  font-size: 2.13vw;
-  margin-top: 2.8vw;
-  font-family: Helvetica;
-  font-weight: normal;
-  line-height: 2.67vw;
-  white-space: pre;
-}
-.group {
-  height: 22.4vw;
-  display: flex;
-  align-items: flex-start;
-  margin-right: 16.67vw;
-  flex-direction: column;
-}
-.largeIcon_2 {
-  width: 9.07vw;
-  height: 17.33vw;
-  opacity: 1;
-  position: relative;
-  margin-left: 2.93vw;
-}
-.airConditioner {
-  color: #888b8d;
-  position: relative;
-  font-size: 2.13vw;
-  margin-top: 2.4vw;
-  font-family: Helvetica;
-  font-weight: normal;
-  line-height: 2.67vw;
-  white-space: pre;
-}
-.container {
-  width: 12vw;
-  height: 22vw;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.img {
-  width: 12vw;
-  height: 16.53vw;
-  opacity: 1;
-  position: relative;
-}
-.smartPlug {
-  color: #888b8d;
-  position: relative;
-  font-size: 2.13vw;
-  margin-top: 2.8vw;
-  font-family: Helvetica;
-  font-weight: normal;
-  line-height: 2.67vw;
-  white-space: pre;
-}
-.empty {
-  width: 116.8vw;
-  height: 0.13vw;
-  position: relative;
-  margin-top: 3.07vw;
-  border-top-color: rgba(240, 240, 240, 1);
-  border-top-style: solid;
-  border-top-width: 1px;
-}
-.div {
-  left: 29.33vw;
-  width: 0.13vw;
-  bottom: 0vw;
-  height: 58.53vw;
-  position: absolute;
-  border-left-color: rgba(240, 240, 240, 1);
-  border-left-style: solid;
-  border-left-width: 1px;
-}
-.empty_2 {
-  width: 0.13vw;
-  bottom: 0vw;
-  height: 58.53vw;
-  position: absolute;
-  align-self: center;
-  border-left-color: rgba(240, 240, 240, 1);
-  border-left-style: solid;
-  border-left-width: 1px;
-}
-.div_2 {
-  right: 29.2vw;
-  width: 0.13vw;
-  bottom: 0vw;
-  height: 58.53vw;
-  position: absolute;
-  border-left-color: rgba(240, 240, 240, 1);
-  border-left-style: solid;
-  border-left-width: 1px;
-}
-.block_3 {
-  height: 22.27vw;
-  display: flex;
-  position: relative;
-  margin-top: 3.87vw;
-  align-items: center;
-  flex-direction: row;
-}
-.outer_2 {
-  height: 22.27vw;
-  display: flex;
-  align-items: flex-start;
-  margin-right: 15.87vw;
-  flex-direction: column;
-}
-.largeIcon_3 {
-  width: 9.07vw;
-  height: 17.33vw;
-  opacity: 1;
-  position: relative;
-  margin-left: 2.93vw;
-}
-.smartLighting_2 {
-  color: #888b8d;
-  position: relative;
-  font-size: 2.13vw;
-  margin-top: 2.27vw;
-  font-family: Helvetica;
-  font-weight: normal;
-  line-height: 2.67vw;
-  white-space: pre;
-}
-.wrap_2 {
-  width: 13.6vw;
-  height: 21.87vw;
-  display: flex;
-  margin-top: 0.4vw;
-  align-items: center;
-  margin-right: 15.2vw;
-  flex-direction: column;
-}
-.smallItem {
-  width: 12vw;
-  height: 16.53vw;
-  opacity: 1;
-  position: relative;
-}
-.smartWasher_2 {
-  color: #888b8d;
-  position: relative;
-  font-size: 2.13vw;
-  margin-top: 2.67vw;
-  font-family: Helvetica;
-  font-weight: normal;
-  line-height: 2.67vw;
-  white-space: pre;
-}
-.block_2 {
-  height: 22.27vw;
-  display: flex;
-  align-items: flex-start;
-  margin-right: 16.67vw;
-  flex-direction: column;
-}
-.largeIcon_4 {
-  width: 9.07vw;
-  height: 17.33vw;
-  opacity: 1;
-  position: relative;
-  margin-left: 2.93vw;
-}
-.airConditioner_2 {
-  color: #888b8d;
-  position: relative;
-  font-size: 2.13vw;
-  margin-top: 2.27vw;
-  font-family: Helvetica;
-  font-weight: normal;
-  line-height: 2.67vw;
-  white-space: pre;
-}
-.group_2 {
-  width: 12vw;
-  height: 21.87vw;
-  display: flex;
-  margin-top: 0.4vw;
-  align-items: center;
-  flex-direction: column;
-}
-.smallPic {
-  width: 12vw;
-  height: 16.53vw;
-  opacity: 1;
-  position: relative;
-}
-.smartPlug_2 {
-  color: #888b8d;
-  position: relative;
-  font-size: 2.13vw;
-  margin-top: 2.67vw;
-  font-family: Helvetica;
-  font-weight: normal;
-  line-height: 2.67vw;
-  white-space: pre;
+
+  .primary {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #f8f9fb;
+    width: 42.67vw;
+    height: 58.67vw;
+    overflow: hidden;
+
+    .hot {
+      position: relative;
+      margin-top: 5.6vw;
+      margin-left: 5.33vw;
+      max-width: 35.73vw;
+      height: 8.27vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 8.27vw;
+      letter-spacing: 0px;
+      white-space: nowrap;
+      color: #e74c00;
+      font-family: Helvetica;
+      font-size: 7.2vw;
+      font-weight: normal;
+    }
+    .products {
+      position: relative;
+      margin-top: 0.13vw;
+      margin-left: 5.87vw;
+      max-width: 35.2vw;
+      height: 2.93vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 2.93vw;
+      white-space: nowrap;
+      color: #e74c00;
+      font-family: Helvetica;
+      font-size: 2.4vw;
+      font-weight: normal;
+    }
+    .item {
+      position: relative;
+      opacity: 1;
+      margin-top: 0.93vw;
+      width: 35.33vw;
+      height: 40.8vw;
+    }
+  }
+  .side {
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(229, 229, 229, 1);
+    background-color: #ffffff;
+    width: 117.33vw;
+    height: 58.67vw;
+
+    .outer {
+      display: flex;
+      position: relative;
+      align-items: center;
+      flex-direction: row;
+      margin-top: 3.73vw;
+      height: 22.4vw;
+
+      .wrap {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-right: 15.87vw;
+        height: 22.4vw;
+
+        .largeIcon {
+          position: relative;
+          opacity: 1;
+          margin-left: 2.93vw;
+          width: 9.07vw;
+          height: 17.33vw;
+        }
+        .smartLighting {
+          position: relative;
+          margin-top: 2.4vw;
+          line-height: 2.67vw;
+          white-space: pre;
+          color: #888b8d;
+          font-family: Helvetica;
+          font-size: 2.13vw;
+          font-weight: normal;
+        }
+      }
+      .block {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 15.2vw;
+        width: 13.6vw;
+        height: 22vw;
+
+        .pic {
+          position: relative;
+          opacity: 1;
+          width: 12vw;
+          height: 16.53vw;
+        }
+        .smartWasher {
+          position: relative;
+          margin-top: 2.8vw;
+          line-height: 2.67vw;
+          white-space: pre;
+          color: #888b8d;
+          font-family: Helvetica;
+          font-size: 2.13vw;
+          font-weight: normal;
+        }
+      }
+      .group {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-right: 16.67vw;
+        height: 22.4vw;
+
+        .largeIcon_2 {
+          position: relative;
+          opacity: 1;
+          margin-left: 2.93vw;
+          width: 9.07vw;
+          height: 17.33vw;
+        }
+        .airConditioner {
+          position: relative;
+          margin-top: 2.4vw;
+          line-height: 2.67vw;
+          white-space: pre;
+          color: #888b8d;
+          font-family: Helvetica;
+          font-size: 2.13vw;
+          font-weight: normal;
+        }
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 12vw;
+        height: 22vw;
+
+        .img {
+          position: relative;
+          opacity: 1;
+          width: 12vw;
+          height: 16.53vw;
+        }
+        .smartPlug {
+          position: relative;
+          margin-top: 2.8vw;
+          line-height: 2.67vw;
+          white-space: pre;
+          color: #888b8d;
+          font-family: Helvetica;
+          font-size: 2.13vw;
+          font-weight: normal;
+        }
+      }
+    }
+    .empty {
+      position: relative;
+      margin-top: 3.07vw;
+      border-top-width: 1px;
+      border-top-style: solid;
+      border-top-color: rgba(240, 240, 240, 1);
+      width: 116.8vw;
+      height: 0.13vw;
+    }
+    .div {
+      position: absolute;
+      bottom: 0vw;
+      left: 29.33vw;
+      border-left-width: 1px;
+      border-left-style: solid;
+      border-left-color: rgba(240, 240, 240, 1);
+      width: 0.13vw;
+      height: 58.53vw;
+    }
+    .empty_2 {
+      position: absolute;
+      bottom: 0vw;
+      align-self: center;
+      border-left-width: 1px;
+      border-left-style: solid;
+      border-left-color: rgba(240, 240, 240, 1);
+      width: 0.13vw;
+      height: 58.53vw;
+    }
+    .div_2 {
+      position: absolute;
+      right: 29.2vw;
+      bottom: 0vw;
+      border-left-width: 1px;
+      border-left-style: solid;
+      border-left-color: rgba(240, 240, 240, 1);
+      width: 0.13vw;
+      height: 58.53vw;
+    }
+    .block_3 {
+      display: flex;
+      position: relative;
+      align-items: center;
+      flex-direction: row;
+      margin-top: 3.87vw;
+      height: 22.27vw;
+
+      .outer_2 {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-right: 15.87vw;
+        height: 22.27vw;
+
+        .largeIcon_3 {
+          position: relative;
+          opacity: 1;
+          margin-left: 2.93vw;
+          width: 9.07vw;
+          height: 17.33vw;
+        }
+        .smartLighting_2 {
+          position: relative;
+          margin-top: 2.27vw;
+          line-height: 2.67vw;
+          white-space: pre;
+          color: #888b8d;
+          font-family: Helvetica;
+          font-size: 2.13vw;
+          font-weight: normal;
+        }
+      }
+      .wrap_2 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 0.4vw;
+        margin-right: 15.2vw;
+        width: 13.6vw;
+        height: 21.87vw;
+
+        .smallItem {
+          position: relative;
+          opacity: 1;
+          width: 12vw;
+          height: 16.53vw;
+        }
+        .smartWasher_2 {
+          position: relative;
+          margin-top: 2.67vw;
+          line-height: 2.67vw;
+          white-space: pre;
+          color: #888b8d;
+          font-family: Helvetica;
+          font-size: 2.13vw;
+          font-weight: normal;
+        }
+      }
+      .block_2 {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-right: 16.67vw;
+        height: 22.27vw;
+
+        .largeIcon_4 {
+          position: relative;
+          opacity: 1;
+          margin-left: 2.93vw;
+          width: 9.07vw;
+          height: 17.33vw;
+        }
+        .airConditioner_2 {
+          position: relative;
+          margin-top: 2.27vw;
+          line-height: 2.67vw;
+          white-space: pre;
+          color: #888b8d;
+          font-family: Helvetica;
+          font-size: 2.13vw;
+          font-weight: normal;
+        }
+      }
+      .group_2 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 0.4vw;
+        width: 12vw;
+        height: 21.87vw;
+
+        .smallPic {
+          position: relative;
+          opacity: 1;
+          width: 12vw;
+          height: 16.53vw;
+        }
+        .smartPlug_2 {
+          position: relative;
+          margin-top: 2.67vw;
+          line-height: 2.67vw;
+          white-space: pre;
+          color: #888b8d;
+          font-family: Helvetica;
+          font-size: 2.13vw;
+          font-weight: normal;
+        }
+      }
+    }
+  }
 }

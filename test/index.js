@@ -6,8 +6,6 @@ const path = require('path');
 const prettier = require('prettier');
 const { NodeVM } = require('vm2');
 const _ = require('lodash');
-const jss = require('jss').default
-const preset = require('jss-preset-default').default
 
 const data = require('./data');
 
@@ -29,8 +27,6 @@ co(function*() {
       width: 750,
       viewportWidth: 375
     },
-    jss,
-    preset,
     utils: {
     }
   });

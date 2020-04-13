@@ -1,22 +1,5 @@
 module.exports = function(schema, option) {
-  const {prettier, jss, preset} = option;
-  const plugins = preset().plugins
-  // functions(),
-  // observable(options.observable),
-  // template(),
-  // global(),
-  // extend(),
-  // nested(),
-  // compose(), 
-  // camelCase(),
-  // defaultUnit(options.defaultUnit),
-  // expand(),
-  // vendorPrefixer(),
-  // propsSort()
-  jss.setup({
-    createGenerateId: function() {return (rule, sheet) => rule.key},
-    plugins,
-  })
+  const {prettier} = option;
 
   // imports
   const imports = [];
@@ -91,6 +74,37 @@ module.exports = function(schema, option) {
     }
 
     return style;
+  }
+
+  const parseCamelToLine = (string) => {
+    return string.split(/(?=[A-Z])/).join('-').toLowerCase();
+  }
+
+  const generateScss = (schema, style) => {
+    let scss = '';
+
+    function walk(json) {
+      if (json.props.className) {
+        let className = json.props.className;
+        scss += `\n.${className} {`;
+
+        for (let key in style[className]) {
+          scss += `${parseCamelToLine(key)}: ${style[className][key]};\n`
+        }
+      }
+
+      if (json.children && json.children.length > 0) {
+        json.children.forEach(child => walk(child));
+      }
+
+      if (json.props.className) {
+        scss += '}';
+      }
+    }
+
+    walk(schema);
+
+    return scss;
   }
 
   // parse function, return params and content
@@ -385,12 +399,12 @@ module.exports = function(schema, option) {
       },
       {
         panelName: `index.scss`,
-        panelValue: prettier.format(`${toString(jss.createStyleSheet(style).toString())}`, scssPrettierOpt),
+        panelValue: prettier.format(`${toString(generateScss(schema, style))}`, scssPrettierOpt),
         panelType: 'scss'
       },
       {
         panelName: `index.responsive.scss`,
-        panelValue: prettier.format(`${toString(jss.createStyleSheet(responsiveStyle).toString())}`, scssPrettierOpt),
+        panelValue: prettier.format(`${toString(generateScss(schema, responsiveStyle))}`, scssPrettierOpt),
         panelType: 'scss'
       }
     ],
