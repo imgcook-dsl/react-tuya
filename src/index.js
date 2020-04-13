@@ -1,5 +1,22 @@
 module.exports = function(schema, option) {
-  const {prettier} = option;
+  const {prettier, jss, preset} = option;
+  const plugins = preset().plugins
+  // functions(),
+  // observable(options.observable),
+  // template(),
+  // global(),
+  // extend(),
+  // nested(),
+  // compose(), 
+  // camelCase(),
+  // defaultUnit(options.defaultUnit),
+  // expand(),
+  // vendorPrefixer(),
+  // propsSort()
+  jss.setup({
+    createGenerateId: function() {return (rule, sheet) => rule.key},
+    plugins,
+  })
 
   // imports
   const imports = [];
@@ -66,7 +83,7 @@ module.exports = function(schema, option) {
         case 'borderTopRightRadius':
         case 'borderTopLeftRadius':
         case 'borderRadius':
-          style[key] = (parseInt(style[key]) / _w).toFixed(2) + 'vw';
+          style[key] = style[key]; //(parseInt(style[key]) / _w).toFixed(2) + 'vw';
           break;
       }
     }
@@ -201,7 +218,7 @@ module.exports = function(schema, option) {
   const generateRender = (schema) => {
     const type = schema.componentName.toLowerCase();
     const className = schema.props && schema.props.className;
-    const classString = className ? ` style={styles.${className}}` : '';
+    const classString = className ? ` classNames={styles.${className}}` : '';
 
     if (className) {
       style[className] = parseStyle(schema.props.style);
@@ -338,7 +355,13 @@ module.exports = function(schema, option) {
   transform(schema);
 
   const prettierOpt = {
-    parser: 'babel',
+    parser: 'babel-ts',
+    printWidth: 120,
+    singleQuote: true
+  };
+
+  const scssPrettierOpt = {
+    parser: 'scss',
     printWidth: 120,
     singleQuote: true
   };
@@ -346,23 +369,21 @@ module.exports = function(schema, option) {
   return {
     panelDisplay: [
       {
-        panelName: `index.jsx`,
+        panelName: `index.tsx`,
         panelValue: prettier.format(`
-          'use strict';
-
-          import React, { Component } from 'react';
+          import React, { Component } from 'react'
           ${imports.join('\n')}
-          import styles from './style.js';
+          import styles from './index.scss'
           ${utils.join('\n')}
           ${classes.join('\n')}
           export default ${schema.componentName}_0;
         `, prettierOpt),
-        panelType: 'js',
+        panelType: 'tsx',
       },
       {
-        panelName: `style.js`,
-        panelValue: prettier.format(`export default ${toString(style)}`, prettierOpt),
-        panelType: 'js'
+        panelName: `index.scss`,
+        panelValue: prettier.format(`${toString(jss.createStyleSheet(style).toString())}`, scssPrettierOpt),
+        panelType: 'scss'
       }
     ],
     noTemplate: true
