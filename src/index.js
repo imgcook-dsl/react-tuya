@@ -23,6 +23,7 @@ module.exports = function(schema, option) {
 
   // inline style
   const style = {};
+  const responsiveStyle = {};
 
   // Global Public Functions
   const utils = [];
@@ -58,7 +59,8 @@ module.exports = function(schema, option) {
   };
 
   // convert to responsive unit, such as vw
-  const parseStyle = (style) => {
+  const parseStyle = (s, responsive) => {
+    const style = { ...s }
     for (let key in style) {
       switch (key) {
         case 'fontSize':
@@ -83,7 +85,7 @@ module.exports = function(schema, option) {
         case 'borderTopRightRadius':
         case 'borderTopLeftRadius':
         case 'borderRadius':
-          style[key] = style[key]; //(parseInt(style[key]) / _w).toFixed(2) + 'vw';
+          style[key] = responsive ? (parseInt(style[key]) / _w).toFixed(2) + 'vw' : style[key];
           break;
       }
     }
@@ -221,7 +223,8 @@ module.exports = function(schema, option) {
     const classString = className ? ` classNames={styles.${className}}` : '';
 
     if (className) {
-      style[className] = parseStyle(schema.props.style);
+      style[className] = parseStyle(schema.props.style, false);
+      responsiveStyle[className] = parseStyle(schema.props.style, true);
     }
 
     let xml;
@@ -383,6 +386,11 @@ module.exports = function(schema, option) {
       {
         panelName: `index.scss`,
         panelValue: prettier.format(`${toString(jss.createStyleSheet(style).toString())}`, scssPrettierOpt),
+        panelType: 'scss'
+      },
+      {
+        panelName: `index.responsive.scss`,
+        panelValue: prettier.format(`${toString(jss.createStyleSheet(responsiveStyle).toString())}`, scssPrettierOpt),
         panelType: 'scss'
       }
     ],
