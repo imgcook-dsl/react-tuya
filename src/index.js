@@ -98,7 +98,7 @@ module.exports = function(schema, option) {
       }
 
       if (json.props.className) {
-        scss += '}';
+        scss += '}\n';
       }
     }
 
