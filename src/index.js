@@ -133,7 +133,6 @@ module.exports = function(schema, option) {
           return value.slice(2, -2);
         }
       }
-
       if (isReactNode) {
         return value;
       } else {
