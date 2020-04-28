@@ -1,345 +1,197 @@
 .mod {
   display: flex;
-  align-items: center;
-  flex-direction: row;
-  height: 441px;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 1440px;
+  height: 132px;
 
-  .primary {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    background-color: #f8f9fb;
-    width: 320px;
-    height: 440px;
-    overflow: hidden;
-
-    .hot {
-      position: relative;
-      margin-top: 42px;
-      margin-left: 40px;
-      max-width: 268px;
-      height: 62px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      line-height: 62px;
-      letter-spacing: 0px;
-      white-space: nowrap;
-      color: #e74c00;
-      font-family: Helvetica;
-      font-size: 54px;
-      font-weight: normal;
-    }
-
-    .products {
-      position: relative;
-      margin-top: 1px;
-      margin-left: 44px;
-      max-width: 264px;
-      height: 22px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      line-height: 22px;
-      white-space: nowrap;
-      color: #e74c00;
-      font-family: Helvetica;
-      font-size: 18px;
-      font-weight: normal;
-    }
-
-    .item {
-      position: relative;
-      opacity: 1;
-      margin-top: 7px;
-      width: 265px;
-      height: 306px;
-    }
-  }
-
-  .side {
+  .hd {
     display: flex;
     position: relative;
     align-items: center;
-    flex-direction: column;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgba(229, 229, 229, 1);
-    background-color: #ffffff;
-    width: 880px;
-    height: 440px;
+    flex-direction: row;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #333333;
+    width: 1440px;
+    height: 32px;
 
-    .outer {
+    .login {
+      opacity: 1;
+      margin-right: 10px;
+      margin-left: 1142px;
+      line-height: 20px;
+      white-space: nowrap;
+      color: #b0b0b0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .color {
+      margin-right: 10px;
+      background-color: rgba(102, 102, 102, 0.8);
+      width: 1px;
+      height: 12px;
+    }
+
+    .freeRegistration {
+      opacity: 1;
+      margin-right: 10px;
+      line-height: 20px;
+      white-space: nowrap;
+      color: #b0b0b0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .colorDiv {
+      margin-right: 9px;
+      background-color: rgba(102, 102, 102, 0.8);
+      width: 1px;
+      height: 12px;
+    }
+
+    .juxing {
+      margin-right: 6px;
+      width: 10px;
+      height: 12px;
+    }
+
+    .myOrder {
+      opacity: 1;
+      max-width: 169px;
+      height: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 20px;
+      white-space: nowrap;
+      color: #b0b0b0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+
+  .bd {
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    width: 1440px;
+    height: 100px;
+
+    .info {
+      position: absolute;
+      top: 39px;
+      left: 575px;
+      opacity: 1;
+      line-height: 20px;
+      letter-spacing: 0.32px;
+      white-space: nowrap;
+      color: #9b9b9b;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .sousuo {
+      position: absolute;
+      top: 40px;
+      left: 552px;
+      width: 19px;
+      height: 20px;
+    }
+
+    .container {
       display: flex;
       position: relative;
       align-items: center;
       flex-direction: row;
-      margin-top: 28px;
-      height: 168px;
+      justify-content: center;
+      margin-right: 252px;
+      width: 165px;
+      height: 60px;
 
-      .wrap {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        margin-right: 119px;
-        height: 168px;
-
-        .largeIcon {
-          position: relative;
-          opacity: 1;
-          margin-left: 22px;
-          width: 68px;
-          height: 130px;
-        }
-
-        .smartLighting {
-          position: relative;
-          margin-top: 18px;
-          line-height: 20px;
-          white-space: pre;
-          color: #888b8d;
-          font-family: Helvetica;
-          font-size: 16px;
-          font-weight: normal;
-        }
+      .largeIcon {
+        margin-right: 8px;
+        width: 60px;
+        height: 60px;
       }
 
-      .block {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin-right: 114px;
-        width: 102px;
-        height: 165px;
-
-        .pic {
-          position: relative;
-          opacity: 1;
-          width: 90px;
-          height: 124px;
-        }
-
-        .smartWasher {
-          position: relative;
-          margin-top: 21px;
-          line-height: 20px;
-          white-space: pre;
-          color: #888b8d;
-          font-family: Helvetica;
-          font-size: 16px;
-          font-weight: normal;
-        }
-      }
-
-      .group {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        margin-right: 125px;
-        height: 168px;
-
-        .largeIcon_2 {
-          position: relative;
-          opacity: 1;
-          margin-left: 22px;
-          width: 68px;
-          height: 130px;
-        }
-
-        .airConditioner {
-          position: relative;
-          margin-top: 18px;
-          line-height: 20px;
-          white-space: pre;
-          color: #888b8d;
-          font-family: Helvetica;
-          font-size: 16px;
-          font-weight: normal;
-        }
-      }
-
-      .container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        width: 90px;
-        height: 165px;
-
-        .img {
-          position: relative;
-          opacity: 1;
-          width: 90px;
-          height: 124px;
-        }
-
-        .smartPlug {
-          position: relative;
-          margin-top: 21px;
-          line-height: 20px;
-          white-space: pre;
-          color: #888b8d;
-          font-family: Helvetica;
-          font-size: 16px;
-          font-weight: normal;
-        }
+      .logo {
+        width: 97px;
+        height: 43px;
       }
     }
 
     .empty {
       position: relative;
-      margin-top: 23px;
-      border-top-width: 1px;
-      border-top-style: solid;
-      border-top-color: rgba(240, 240, 240, 1);
-      width: 876px;
-      height: 1px;
+      margin-right: 103px;
+      border-width: 2px;
+      border-style: solid;
+      border-radius: 2px;
+      border-color: rgba(246, 112, 26, 1);
+      width: 520px;
+      height: 40px;
     }
 
-    .div {
+    .tagWrap {
+      box-sizing: border-box;
+      display: flex;
       position: absolute;
-      bottom: 0px;
-      left: 220px;
-      border-left-width: 1px;
-      border-left-style: solid;
-      border-left-color: rgba(240, 240, 240, 1);
-      width: 1px;
-      height: 439px;
+      top: 30px;
+      right: 310px;
+      align-items: center;
+      flex-direction: row;
+      border-radius: 2px;
+      background-color: #f6701a;
+      padding-right: 31px;
+      padding-left: 32px;
+      height: 40px;
+
+      .tag {
+        opacity: 1;
+        line-height: 20px;
+        letter-spacing: 0.39px;
+        white-space: pre;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 500;
+      }
     }
 
-    .empty_2 {
-      position: absolute;
-      bottom: 0px;
-      align-self: center;
-      border-left-width: 1px;
-      border-left-style: solid;
-      border-left-color: rgba(240, 240, 240, 1);
-      width: 1px;
-      height: 439px;
-    }
-
-    .div_2 {
-      position: absolute;
-      right: 219px;
-      bottom: 0px;
-      border-left-width: 1px;
-      border-left-style: solid;
-      border-left-color: rgba(240, 240, 240, 1);
-      width: 1px;
-      height: 439px;
-    }
-
-    .block_3 {
+    .group {
       display: flex;
       position: relative;
       align-items: center;
       flex-direction: row;
-      margin-top: 29px;
-      height: 167px;
+      justify-content: center;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 2px;
+      border-color: rgba(229, 229, 229, 1);
+      background-color: #f8f8f8;
+      width: 160px;
+      height: 40px;
 
-      .outer_2 {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        margin-right: 119px;
-        height: 167px;
-
-        .largeIcon_3 {
-          position: relative;
-          opacity: 1;
-          margin-left: 22px;
-          width: 68px;
-          height: 130px;
+      .gouwuchenorWrap {
+        .gouwuchenor {
         }
 
-        .smartLighting_2 {
-          position: relative;
-          margin-top: 17px;
-          line-height: 20px;
-          white-space: pre;
-          color: #888b8d;
-          font-family: Helvetica;
-          font-size: 16px;
-          font-weight: normal;
+        .wrap {
+          .color_2 {
+          }
+
+          .colorDiv_2 {
+          }
         }
       }
 
-      .wrap_2 {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin-top: 3px;
-        margin-right: 114px;
-        width: 102px;
-        height: 164px;
-
-        .smallItem {
-          position: relative;
-          opacity: 1;
-          width: 90px;
-          height: 124px;
-        }
-
-        .smartWasher_2 {
-          position: relative;
-          margin-top: 20px;
-          line-height: 20px;
-          white-space: pre;
-          color: #888b8d;
-          font-family: Helvetica;
-          font-size: 16px;
-          font-weight: normal;
-        }
+      .shoppingCart {
       }
 
-      .block_2 {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        margin-right: 125px;
-        height: 167px;
-
-        .largeIcon_4 {
-          position: relative;
-          opacity: 1;
-          margin-left: 22px;
-          width: 68px;
-          height: 130px;
-        }
-
-        .airConditioner_2 {
-          position: relative;
-          margin-top: 17px;
-          line-height: 20px;
-          white-space: pre;
-          color: #888b8d;
-          font-family: Helvetica;
-          font-size: 16px;
-          font-weight: normal;
-        }
-      }
-
-      .group_2 {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin-top: 3px;
-        width: 90px;
-        height: 164px;
-
-        .smallPic {
-          position: relative;
-          opacity: 1;
-          width: 90px;
-          height: 124px;
-        }
-
-        .smartPlug_2 {
-          position: relative;
-          margin-top: 20px;
-          line-height: 20px;
-          white-space: pre;
-          color: #888b8d;
-          font-family: Helvetica;
-          font-size: 16px;
-          font-weight: normal;
+      .block {
+        .num {
         }
       }
     }

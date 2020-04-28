@@ -4,6 +4,9 @@ module.exports = function(schema, option) {
   // imports
   const imports = [];
 
+  const components = [];
+
+  const moon = ['Button'];
   // inline style
   const style = {};
   const responsiveStyle = {};
@@ -16,6 +19,8 @@ module.exports = function(schema, option) {
 
   // 1vw = width / 100
   const _w = option.responsive.width / 100;
+
+  const _ = option._
 
   const isExpression = (value) => {
     return /^\{\{.*\}\}$/.test(value);
@@ -140,6 +145,10 @@ module.exports = function(schema, option) {
     }
   }
 
+  const getComponentsImport = () => {
+    return components.length > 0 ? `import { ${components.join(', ')} } from '@tuya-fe/moon'` : ''
+  }
+
   // parse async dataSource
   const parseDataSource = (data) => {
     const name = data.id;
@@ -232,9 +241,10 @@ module.exports = function(schema, option) {
 
   // generate render xml
   const generateRender = (schema) => {
+    const originType = schema.componentName
     const type = schema.componentName.toLowerCase();
     const className = schema.props && schema.props.className;
-    const classString = className ? ` classNames={styles.${className}}` : '';
+    const classString = className ? ` className={styles.${className}}` : '';
 
     if (className) {
       style[className] = parseStyle(schema.props.style, false);
@@ -243,31 +253,54 @@ module.exports = function(schema, option) {
 
     let xml;
     let props = '';
+    let componentProps = '';
 
     Object.keys(schema.props).forEach((key) => {
-      if (['className', 'style', 'text', 'src'].indexOf(key) === -1) {
+      if (['className', 'style', 'text', 'src', 'lines'].indexOf(key) === -1) {
         props += ` ${key}={${parseProps(schema.props[key])}}`;
       }
     })
 
-    switch(type) {
-      case 'text':
-        const innerText = parseProps(schema.props.text, true);
-        xml = `<span${classString}${props}>${innerText}</span>`;
-        break;
-      case 'image':
-        const source = parseProps(schema.props.src);
-        xml = `<img${classString}${props} src={${source}} />`;
-        break;
-      case 'div':
-      case 'page':
-      case 'block':
-        if (schema.children && schema.children.length) {
-          xml = `<div${classString}${props}>${transform(schema.children)}</div>`;
-        } else {
-          xml = `<div${classString}${props} />`;
-        }
-        break;
+    // moon组件
+    if (moon.indexOf(originType) > -1) {
+      // 智能
+      const isSmart = Boolean(schema.smart)
+      const params = _.get(schema, "smart.layerProtocol.component.params") || {}
+      Object.keys(params).forEach((key) => {
+        componentProps += ` ${key}={${parseProps(params[key])}}`;
+      })
+      if (components.indexOf(originType) === -1) {
+        components.push(originType);
+      }
+      switch(originType) {
+        case 'Button':
+          xml = `<Button ${classString}${props}${componentProps} ></Button>`
+          break;
+     }
+    // 普通元素
+    } else {
+      switch(type) {
+        case 'button':
+          xml = `<Button ${componentProps}></Button>` 
+          break;
+        case 'text':
+          const innerText = parseProps(schema.props.text, true);
+          xml = `<span${classString}${props}>${innerText}</span>`;
+          break;
+        case 'image':
+          const source = parseProps(schema.props.src);
+          xml = `<img${classString}${props} src={${source}} />`;
+          break;
+        case 'div':
+        case 'page':
+        case 'block':
+          if (schema.children && schema.children.length) {
+            xml = `<div${classString}${props}>${transform(schema.children)}</div>`;
+          } else {
+            xml = `<div${classString}${props} />`;
+          }
+          break;
+      }
     }
 
     if (schema.loop) {
@@ -317,9 +350,9 @@ module.exports = function(schema, option) {
         if (schema.dataSource && Array.isArray(schema.dataSource.list)) {
           schema.dataSource.list.forEach((item) => {
             if (typeof item.isInit === 'boolean' && item.isInit) {
-              init.push(`this.${item.id}();`)
+              init.push(`this.${item.id}()`)
             } else if (typeof item.isInit === 'string') {
-              init.push(`if (${parseProps(item.isInit)}) { this.${item.id}(); }`)
+              init.push(`if (${parseProps(item.isInit)}) { this.${item.id}() }`)
             }
             methods.push(parseDataSource(item));
           });
@@ -348,7 +381,7 @@ module.exports = function(schema, option) {
         }
 
         render.push(generateRender(schema))
-        render.push(`);}`);
+        render.push(`) }`);
 
         classData = classData.concat(states).concat(lifeCycles).concat(methods).concat(render);
         classData.push('}');
@@ -374,7 +407,8 @@ module.exports = function(schema, option) {
   const prettierOpt = {
     parser: 'babel-ts',
     printWidth: 120,
-    singleQuote: true
+    singleQuote: true,
+    semi: false,
   };
 
   const scssPrettierOpt = {
@@ -383,17 +417,31 @@ module.exports = function(schema, option) {
     singleQuote: true
   };
 
+
+  const getImports = () => {
+    return `
+      import React, { Component } from 'react'
+      ${getComponentsImport()}
+      ${imports.join('\n')}
+      ${utils.join('\n')}
+      import styles from './index.scss'
+    `
+  }
+
+  const getClasses = () => {
+    return `
+      ${classes.join('\n')}
+    `
+  }
+
   return {
     panelDisplay: [
       {
         panelName: `index.tsx`,
         panelValue: prettier.format(`
-          import React, { Component } from 'react'
-          ${imports.join('\n')}
-          import styles from './index.scss'
-          ${utils.join('\n')}
-          ${classes.join('\n')}
-          export default ${schema.componentName}_0;
+          ${getImports()}
+          ${getClasses()}
+          export default ${schema.componentName}_0
         `, prettierOpt),
         panelType: 'tsx',
       },
